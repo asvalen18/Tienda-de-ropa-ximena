@@ -8,7 +8,7 @@
 
 /* HEADER */
 .header {
-  background: #fff;
+  background: rgb(230, 230, 230);
   border-bottom: 1px solid #ffd6ec;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .logo-container img {
-  height: 64px; /* aumentado desde 48px */
+  height: 64px; /* aumentado desde 50px */
   width: auto;
   display: block;
 }
@@ -44,7 +44,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: #fcb6e7;
   padding: 8px 12px;
   font-weight: 700;
   font-size: 14px;
@@ -83,7 +83,7 @@
 }
 
 .banner-text {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.644);
   padding: 30px 50px;
   border-radius: 20px;
   text-align: center;
