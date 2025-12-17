@@ -1,142 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ximena - Tienda de Moda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ximena Fashion Store</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background: #fff; color: #333; }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f6f6f6;
-        }
+    /* HEADER + MENÚ */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      border-bottom: 1px solid #eee;
+    }
+    header .logo img {
+      height: 60px;
+      object-fit: contain;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ff4d9e;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #e0308c;
+    }
 
-        /* ----- HEADER ----- */
-        header {
-            background-color: #000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
+    /* BANNER / PORTADA */
+    .banner {
+      width: 100%;
+      height: 400px;
+      background: url('https://i.pinimg.com/736x/36/a1/de/36a1de4d46b7162b7dacf964151d7869.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .banner h1 {
+      background: rgba(255,255,255,0.8);
+      padding: 15px 25px;
+      border-radius: 10px;
+      color: #ff4d9e;
+      font-size: 36px;
+    }
 
-        /* ----- MENÚ ----- */
-        nav {
-            background-color: #ffffff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            font-size: 16px;
-            border-bottom: 1px solid #ddd;
-        }
+    /* CATÁLOGO DE PRODUCTOS */
+    .productos {
+      padding: 40px;
+    }
+    .productos .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+      background: #fff;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .card .info {
+      padding: 15px;
+      text-align: center;
+    }
+    .card .info h3 {
+      color: #ff4d9e;
+      margin-bottom: 10px;
+    }
+    .card .info p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .card .info a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #ff4d9e;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .card .info a:hover {
+      background: #e0308c;
+    }
 
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #e91e63;
-        }
-
-        /* ----- GRID DE PRODUCTOS ----- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            padding: 25px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            height: 270px;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-        }
-
-        .card button {
-            background-color: #e91e63;
-            color: white;
-            border: none;
-            padding: 12px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .card button:hover {
-            background-color: #c2185b;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #000;
-            color: white;
-            margin-top: 30px;
-        }
-    </style>
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f8f8;
+      margin-top: 40px;
+      color: #777;
+    }
+  </style>
 </head>
-
 <body>
 
-    <header>
-        XIMENA - TIENDA DE MODA
-    </header>
-
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Ximena Logo">
+    </div>
     <nav>
-        <a href="#camisetas">Camisetas</a>
-        <a href="#sudaderas">Sudaderas</a>
-        <a href="#chaquetasD">Chaquetas Dama</a>
-        <a href="#chaquetasH">Chaquetas Hombre</a>
-        <a href="#busos">Busos Capoteros</a>
-        <a href="#chamarras">Chamarras</a>
-        <a href="#jeanChaquetas">Chaquetas en Jean</a>
-        <a href="#jeans">Jeans</a>
+      <a href="#">Inicio</a>
+      <a href="#">Mujer</a>
+      <a href="#">Hombre</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Contacto</a>
     </nav>
+  </header>
 
-    <!-- -------- CAMISETAS -------- -->
-    <section id="camisetas">
-        <h2 style="text-align:center; padding-top:20px;">Camisetas Oversize</h2>
-        <div class="grid">
-            <!-- Producto ejemplo -->
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/36/a1/de/36a1de4d46b7162b7dacf964151d7869.jpg" alt="">
-                <h3>Camiseta Oversize</h3>
-                <button onclick="whatsapp('Camiseta Oversize')">Ver en WhatsApp</button>
-            </div>
+  <div class="banner">
+    <h1>Nueva Colección 2025</h1>
+  </div>
+
+  <section class="productos">
+    <h2 style="text-align:center; margin-bottom:30px; color:#ff4d9e;">Productos Destacados</h2>
+    <div class="grid">
+      <!-- Ejemplo de producto -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x400" alt="Producto 1">
+        <div class="info">
+          <h3>Jeans Pegado</h3>
+          <p>$79.900</p>
+          <a href="https://wa.me/573000000000?text=Hola!%20Quiero%20el%20Jeans%20Pegado">Consultar</a>
         </div>
-    </section>
+      </div>
+      <!-- Añade más productos igual -->
+    </div>
+  </section>
 
-    <!-- Puedes duplicar los "card" para agregar más productos -->
-
-    <footer>
-        © 2025 Ximena - Todos los derechos reservados
-    </footer>
-
-    <script>
-        function whatsapp(producto) {
-            const numero = "573001112233"; 
-            const mensaje = encodeURIComponent("Hola, estoy interesada en: " + producto);
-            window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
-        }
-    </script>
+  <footer>
+    &copy; 2025 Ximena Fashion Store
+  </footer>
 
 </body>
 </html>
