@@ -8,7 +8,7 @@
 
 /* HEADER */
 .header {
-  background: #ff4da63b;
+  background: #ff4da667;
   border-bottom: 1px solid #ff4da6;
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .logo-container img {
-  height: 64px; /* aumentado desde 70px */
+  height: 64px; /* aumentado desde 90px */
   width: auto;
   display: block;
 }
