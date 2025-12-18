@@ -58,6 +58,33 @@
   color: #ff4da6;
 }
 
+/* Botón hamburguesa */
+.nav-toggle {
+  display: none; /* visible solo en móvil */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #381825;
+  margin: 4px 0;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* estado activo (cruz) */
+.nav-toggle.is-active .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+.nav-toggle.is-active .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 /* Responsive: en pantallas pequeñas apilar o compactar */
 @media (max-width: 768px) {
   .header {
@@ -70,17 +97,28 @@
   }
 
   .nav {
+    display: none;
     width: 100%;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
     margin-top: 8px;
-    flex-wrap: wrap;
+  }
+
+  /* mostrar nav cuando tenga la clase open */
+  .nav.open {
+    display: flex;
   }
 
   .nav a {
-    font-size: 13px;
-    padding: 6px 8px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+    background: transparent;
   }
+
+  .nav-toggle { display: flex; }
 
   .banner {
     height: 320px;

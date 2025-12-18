@@ -13,10 +13,17 @@
   <!-- HEADER -->
   <header class="header">
     <div class="logo-container">
-      <img src="img/logo.svg" alt="X-Glow brand wordmark with bold stylized X emblem to the left; prominent text reads X-Glow; black vector logo on a transparent background intended for a website header; tone modern, bold and energetic">
+      <img src="img/logo.svg" alt="X-Glow logo">
     </div>
 
-    <nav class="nav">
+    <!-- Botón hamburguesa (visible en móvil) -->
+    <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="main-nav" class="nav" role="navigation">
       <a href="#">Novedades</a>
       <a href="#">Camisetas</a>
       <a href="#">Sudaderas</a>
@@ -62,5 +69,6 @@
   <!-- WHATSAPP -->
   <a class="whatsapp" href="https://wa.me/57XXXXXXXXXX" target="_blank">💬</a>
 
+  <script src="js/main.js"></script>
 </body>
 </html>
