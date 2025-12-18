@@ -62,14 +62,89 @@
 @media (max-width: 768px) {
   .header {
     flex-wrap: wrap;
-    padding: 12px;
+    padding: 10px 12px;
+  }
+
+  .logo-container img {
+    height: 56px;
   }
 
   .nav {
     width: 100%;
-    justify-content: center; /* o flex-end si prefieres */
-    gap: 12px;
+    justify-content: center;
+    gap: 10px;
     margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .banner {
+    height: 320px;
+  }
+
+  .banner-text {
+    padding: 18px 28px;
+  }
+
+  .banner-text h1 { font-size: 36px; }
+  .banner-text p { font-size: 15px; }
+
+  .seccion { padding: 40px 20px; }
+  .seccion h2 { font-size: 26px; margin-bottom: 24px; }
+
+  .productos { gap: 20px; }
+  .producto { padding: 12px; }
+  .producto h3 { font-size: 16px; }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .logo-container img { height: 44px; }
+
+  .nav a {
+    font-size: 12px;
+    padding: 6px 6px;
+  }
+
+  .banner {
+    height: 240px;
+    background-position: center top;
+  }
+
+  .banner-text {
+    padding: 14px 18px;
+    border-radius: 12px;
+  }
+
+  .banner-text h1 { font-size: 28px; }
+  .banner-text p { font-size: 13px; }
+
+  .seccion { padding: 28px 14px; }
+  .seccion h2 { font-size: 20px; }
+
+  .productos {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .producto img {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .producto { padding: 10px; border-radius: 12px; }
+  .producto h3 { font-size: 15px; }
+  .producto span { font-size: 14px; }
+
+  .whatsapp {
+    right: 14px;
+    bottom: 14px;
+    font-size: 22px;
+    padding: 12px 14px;
   }
 }
 
