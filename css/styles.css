@@ -59,7 +59,7 @@
 }
 
 /* Responsive: en pantallas pequeñas apilar o compactar */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .header {
     flex-wrap: wrap;
     padding: 12px;
