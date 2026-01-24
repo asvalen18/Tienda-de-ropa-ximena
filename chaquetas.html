@@ -7,6 +7,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<script>
+fetch("https://opensheet.elk.sh/1WfvrkwDxsQFgmGQ2p4viHELxw4D8-0ozEj0XBoTT0So/Chaquetas")
+  .then(res => res.json())
+  .then(data => {
+    const contenedor = document.querySelector(".productos");
+    contenedor.innerHTML = "";
+
+    data.forEach(item => {
+      contenedor.innerHTML += `
+        <div class="producto">
+          <img src="${item.imagen}">
+          <div class="producto-info">
+            <h4>${item.nombre}</h4>
+            <p>$${item.precio}</p>
+          </div>
+        </div>
+      `;
+    });
+  });
+</script>
+  
 <body>
   <header class="header">
     <div class="logo-container"><a href="index.html"><img src="img/logo.svg" alt="X-Glow logo"></a></div>
