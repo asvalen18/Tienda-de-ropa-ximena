@@ -263,8 +263,16 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1 / 1;
+  height: 300px; /* fijo para consistencia */
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-container { height: 260px; }
+}
+
+@media (max-width: 480px) {
+  .carousel-container { height: 220px; }
 }
 
 .carousel {
@@ -321,7 +329,7 @@ html {
 }
 
 .carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: oklch(72.674% 0.18629 358.977 / 0.8);
 }
 
 .carousel-btn.prev {
