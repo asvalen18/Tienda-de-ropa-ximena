@@ -40,3 +40,71 @@ if (btn && nav) {
     }
   });
 }
+
+// CARRUSEL DE IMÁGENES
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel-container');
+  
+  carousels.forEach(container => {
+    const carousel = container.querySelector('.carousel');
+    const images = carousel.querySelectorAll('img');
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+    const nextBtn = container.querySelector('.carousel-btn.next');
+    const dots = container.querySelectorAll('.carousel-dot');
+    
+    let currentIndex = 0;
+    
+    // Función para actualizar el carrusel
+    const updateCarousel = () => {
+      const offset = -currentIndex * 100;
+      carousel.style.transform = `translateX(${offset}%)`;
+      
+      // Actualizar puntos
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    };
+    
+    // Botón siguiente
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+      });
+    }
+    
+    // Botón anterior
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+    }
+    
+    // Puntos de navegación
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+      });
+    });
+    
+    // Inicializar
+    updateCarousel();
+  });
+  });
+
+  // Abrir WhatsApp al hacer clic en un producto (ignorar clics en controles del carrusel)
+  const products = document.querySelectorAll('.producto');
+  const phone = '+573238149197';
+
+  products.forEach(prod => {
+    prod.addEventListener('click', (e) => {
+      if (e.target.closest('.carousel-btn') || e.target.closest('.carousel-dot')) return;
+      const name = prod.dataset.product || (prod.querySelector('h3') && prod.querySelector('h3').textContent.trim()) || 'producto';
+      const text = encodeURIComponent(`Hola. Quiero información sobre ${name}.`);
+      window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`, '_blank', 'noopener');
+    });
+  });
+
+// FIN js/main.js;
