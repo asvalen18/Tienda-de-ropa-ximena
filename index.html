@@ -12,26 +12,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-  <script>
-fetch("https://docs.google.com/spreadsheets/d/1WfvrkwDxsQFgmGQ2p4viHELxw4D8-0ozEj0XBoTT0So/edit?usp=sharing")
-  .then(res => res.json())
-  .then(data => {
-    const contenedor = document.querySelector(".productos");
-    contenedor.innerHTML = "";
-
-    data.forEach(item => {
-      contenedor.innerHTML += `
-        <div class="producto">
-          <img src="${item.imagen}" alt="${item.nombre}">
-          <div class="producto-info">
-            <h4>${item.nombre}</h4>
-            <p>$${item.precio}</p>
-          </div>
-        </div>
-      `;
-    });
-  });
-</script>
 
 <body>
 
@@ -71,22 +51,64 @@ fetch("https://docs.google.com/spreadsheets/d/1WfvrkwDxsQFgmGQ2p4viHELxw4D8-0ozE
     <h2>Productos Destacados</h2>
 
     <div class="productos">
-      <div class="producto">
-        <img src="img/img-ropa/chaqueta cuero.jpg" alt="Chaqueta cuero">
-        <h3>Chaqueta Oversize</h3>
-        <span>$89.900</span>
+      <div class="producto" data-product="Chaqueta Oversize">
+        <div class="carousel-container">
+          <div class="carousel">
+            <img src="img/img-ropa/Chaquetas/chaqueta 1/chaqueta acolchada.jpg" alt="Chaqueta oversize frente">
+            <img src="img/img-ropa/Chaquetas/chaqueta 2/chaqueta cuero.jpg" alt="Chaqueta oversize detalle">
+            <img src="img/img-ropa/Chaquetas/chaqueta 3/chaqueta jean.jpg" alt="Chaqueta oversize espalda">
+            <img src="img/img-ropa/Chaquetas/chaqueta 4/chaqueta.jpg" alt="Chaqueta oversize lateral">
+          </div>
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+          <div class="carousel-controls">
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+          </div>
+        </div>
+        <h3>Chaqueta Oversize</h3><span>$89.900</span>
       </div>
 
-      <div class="producto">
-        <img src="img/img-ropa/jeans.jpg" alt="Jean recto azul">
-        <h3>Jean Recto</h3>
-        <span>$79.900</span>
+      <div class="producto" data-product="Jean Recto">
+        <div class="carousel-container">
+          <div class="carousel">
+            <img src="img/img-ropa/jean/jean 1/jean relaxed.jpg" alt="Jean recto frente">
+            <img src="img/img-ropa/jean/jean 2/jean recto.jpg" alt="Jean recto detalle">
+            <img src="img/img-ropa/jean/jean 3/jean slim.jpg" alt="Jean recto espalda">
+            <img src="img/img-ropa/jean/jean 4/jeans.jpg" alt="Jean recto lateral">
+          </div>
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+          <div class="carousel-controls">
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+          </div>
+        </div>
+        <h3>Jean Recto</h3><span>$79.900</span>
       </div>
 
-      <div class="producto">
-        <img src="img/img-ropa/sudadera.jpg" alt="Sudadera premium gris">
-        <h3>Sudadera Premium</h3>
-        <span>$99.900</span>
+      <div class="producto" data-product="Sudadera Premium">
+        <div class="carousel-container">
+          <div class="carousel">
+            <img src="img/img-ropa/sudadera/sudadera 1/sudadera basica.jpg" alt="Sudadera premium frente">
+            <img src="img/img-ropa/sudadera/sudadera 2/sudadera.jpg" alt="Sudadera premium detalle">
+            <img src="img/img-ropa/sudadera/sudadera 3/sudadera premium.jpg" alt="Sudadera premium espalda">
+            <img src="img/img-ropa/sudadera/sudadera 1/sudadera basica.jpg" alt="Sudadera premium lateral">
+          </div>
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
+          <div class="carousel-controls">
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+            <button class="carousel-dot"></button>
+          </div>
+        </div>
+        <h3>Sudadera Premium</h3><span>$99.900</span>
       </div>
     </div>
   </section>
